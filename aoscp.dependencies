@@ -19,7 +19,7 @@
   },
   {  
     "repository":  "device_xiaomi_msm8956-common",
-    "target_path": "device/xiaomi/msm8956-common"
+    "target_path": "device/xiaomi/msm8956-common",
     "branch":      "nougat-mr1",
     "remote":      "aoscp"
   }
