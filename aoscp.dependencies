@@ -2,7 +2,7 @@
  {
     "repository":  "DarkNess-reDefined/kernel_xiaomi_msm8956",
     "target_path": "kernel/xiaomi/msm8956",
-    "branch":      "nougat-mr1",
+    "branch":      "n7x",
 	"remote":      "github"
   },
   {
