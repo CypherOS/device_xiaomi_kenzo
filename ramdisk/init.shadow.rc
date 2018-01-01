@@ -1,0 +1,37 @@
+# KSM
+write /sys/kernel/mm/ksm/run 0
+write /sys/kernel/mm/ksm/run_charging 0
+
+# CORE MODE
+write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 0
+write /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 2
+
+# CPU SCHEDULER
+chmod 755 /proc/sys/kernel/sched_boost
+write /proc/sys/kernel/sched_boost 0
+write /proc/sys/kernel/sched_freq_inc_notify 400000
+write /proc/sys/kernel/sched_freq_dec_notify 400000
+write /proc/sys/kernel/sched_wake_to_idle 0
+
+# SHADOW SCHEDULING
+chmod 755 /proc/sys/kernel/sched_use_shadow_scheduling
+write /proc/sys/kernel/sched_use_shadow_scheduling 1
+write /proc/sys/kernel/sched_shadow_downmigrate 80
+write /proc/sys/kernel/sched_shadow_upmigrate 85
+
+# DCVS
+write /sys/class/devfreq/cpubw/governor "bw_hwmon"
+write /sys/class/devfreq/cpubw/bw_hwmon/io_percent 34
+write /sys/class/devfreq/cpubw/bw_hwmon/guard_band_mbps 100
+write /sys/class/devfreq/qcom,memlat-cpu0.51/polling_interval 10
+write /sys/class/devfreq/qcom,memlat-cpu4.52/polling_interval 10
+
+# FP BOOST
+write /sys/kernel/fp_boost/enabled 1
+
+# POWERSUSPEND
+write /sys/kernel/power_suspend/power_suspend_mode 3
+
+# CPU & GPU UV
+write /sys/devices/system/cpu/cpu0/cpufreq/GPU_mV_table "700 720 760 800 860 900 920 980 1020"
+write /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table "720 740 800 900 960 1000 1030 1040 1050 760 780 850 890 950 1000 1020 1020"

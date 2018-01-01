@@ -52,3 +52,10 @@ PRODUCT_COPY_FILES += \
 
 # Inherit from msm8956-common
 $(call inherit-product, device/xiaomi/msm8956-common/msm8956.mk)
+
+# Shadow
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ramdisk/init.shadow.rc:root/init.shadow.rc \
+    $(LOCAL_PATH)/ramdisk/init.spectrum.rc:root/init.spectrum.rc \
+    $(LOCAL_PATH)/ramdisk/init.spectrum.sh:root/init.spectrum.sh \
+    $(LOCAL_PATH)/ramdisk/system/etc/shadow.sh:system/etc/shadow.sh
