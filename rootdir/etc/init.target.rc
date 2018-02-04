@@ -32,7 +32,7 @@ on init
 
 on post-fs data
     mkdir /data/goodix 0700 system system
-
+touch /sys/android_power/acquire_partial_wake_lock 0775 audio system
 on boot
     chown system system  /dev/goodix_fp
     chmod 0644 /dev/goodix_fp

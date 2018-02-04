@@ -25,7 +25,8 @@
         echo "16384,20992,24064,30720,46080,66560" > /sys/module/lowmemorykiller/parameters/minfree
 	echo 10 > /proc/sys/vm/dirty_background_ratio
     fi
-
+        touch /sys/power/wake_lock
+        echo pwr_dbg > /sys/power/wake_lock
 	Mode=`cat /init.shadow.rc | grep zrammode`
 	Mo=${Mode:11:1}
 	if [ $Mo -eq 1 ] || [ $Mo -eq 3 ]; then
