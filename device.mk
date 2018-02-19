@@ -59,3 +59,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.spectrum.rc:root/init.spectrum.rc \
     $(LOCAL_PATH)/ramdisk/init.spectrum.sh:root/init.spectrum.sh \
     $(LOCAL_PATH)/ramdisk/system/etc/shadow.sh:system/etc/shadow.sh
+
+# for off charging mode
+PRODUCT_PACKAGES += \
+    charger_res_images
