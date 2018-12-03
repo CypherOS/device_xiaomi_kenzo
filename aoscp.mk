@@ -15,10 +15,16 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/xiaomi/kenzo/full_kenzo.mk)
 
 # Inherit some common CypherOS stuff.
 $(call inherit-product, vendor/aoscp/configs/common_full_phone.mk)
+
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Inherit from kipper device
+$(call inherit-product, device/xiaomi/kenzo/device.mk)
 
 # Set those variables here to overwrite the inherited values.
 BOARD_VENDOR := Xiaomi
